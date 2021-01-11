@@ -59,6 +59,7 @@ module.exports = function (options) {
       case 'update':
       case 'create':
       case 'delete':
+      case 'cache':
         let path = file.s3.path;
 
         if (options.originPath) {
@@ -71,7 +72,6 @@ module.exports = function (options) {
           files.push(path.replace(/index\.html$/, ''));
         }
         break;
-      case 'cache':
       case 'skip':
         break;
       default:
